@@ -1,0 +1,480 @@
+{
+  "version": "2.4.0-beta.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": -5.155267578416137,
+          "y": 2.0621070313664553
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": 0,
+          "y": 300
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 300,
+          "y": 0
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "2.4.0-beta.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "doc",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "doc_name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "doc_data",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "article",
+            "properties": [
+              {
+                "$id": "p:3",
+                "token": "art",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "visa",
+            "properties": [
+              {
+                "$id": "p:4",
+                "token": "visa",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:1",
+            "token": "contient",
+            "properties": []
+          },
+          {
+            "$id": "rt:2",
+            "token": "cite",
+            "properties": []
+          },
+          {
+            "$id": "rt:3",
+            "token": "a_modifié",
+            "properties": []
+          },
+          {
+            "$id": "rt:4",
+            "token": "constitution_modifé",
+            "properties": []
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          },
+          {
+            "$id": "r:4",
+            "type": {
+              "$ref": "#rt:4"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "art_article_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:3"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "doc_name_doc_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "visa_visa_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          }
+        ],
+        "indexes": []
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperty": {
+            "$ref": "#p:3"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperty": {
+            "$ref": "#p:4"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "rel_constiutions.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "constitution1_id",
+                "sample": "constitution_2002",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "qui fait",
+                "sample": "modifié",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "constitution2_id",
+                "sample": "constitution_1996",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "art.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "art",
+                "sample": "Art 1 - ORDONNANCE n° 03-11 — relative à la monnaie et au crédit.",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "doc",
+                "sample": "ORDONNANCE n° 03-11 — relative à la monnaie et au crédit.",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "doc.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "doc_name",
+                "sample": "constitution_2020",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "doc_data",
+                "sample": " 2020",
+                "recommendedType": {
+                  "type": "datetime"
+                }
+              }
+            ]
+          },
+          {
+            "name": "doc_mod.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "modifie",
+                "sample": "LOI n° 90-10 — relative à la monnaie et au crédit",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "par",
+                "sample": "ORDONNANCE n° 03-11 — relative à la monnaie et au crédit",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "visa.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "visa",
+                "sample": "constitution_1996",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "doc",
+                "sample": "DECRET EXECUTIF n° 04-379 — instituant une indemnité de responsabilité personnelle au profit des age...",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "doc.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "doc_name"
+            },
+            {
+              "property": {
+                "$ref": "#p:2"
+              },
+              "fieldName": "doc_data"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "art.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:3"
+              },
+              "fieldName": "art"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "visa.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "visa"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:4"
+          },
+          "tableName": "rel_constiutions.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "constitution1_id"
+          },
+          "toMapping": {
+            "fieldName": "constitution2_id"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "doc_mod.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "par"
+          },
+          "toMapping": {
+            "fieldName": "modifie"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "art.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "doc"
+          },
+          "toMapping": {
+            "fieldName": "art"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "visa.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "doc"
+          },
+          "toMapping": {
+            "fieldName": "visa"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
