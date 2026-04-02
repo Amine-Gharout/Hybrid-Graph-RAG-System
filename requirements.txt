@@ -1,16 +1,16 @@
 # Neo4j Database Driver
-neo4j>=5.14.0
+neo4j
 
 # Environment Variables
-python-dotenv>=1.0.0
+python-dotenv
 
 # Data Processing
-pandas>=2.0.0
+pandas
 
 # Testing
-pytest>=7.4.0
-pytest-cov>=4.1.0
+pytest
+pytest-cov
 
 # Code Quality
-black>=23.0.0
-flake8>=6.0.0
+black
+flake8
