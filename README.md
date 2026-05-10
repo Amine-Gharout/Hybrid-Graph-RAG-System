@@ -4,7 +4,7 @@ A Python project implementing a **Retrieval-Augmented Generation (RAG)** system 
 
 > 💡 **Educational Purpose**: This project serves as a comprehensive demonstration of how to build RAG (Retrieval-Augmented Generation) systems using different data storage approaches. It illustrates three distinct methodologies: **vector database-only** (ChromaDB for semantic search), **graph database-only** (Neo4j for relationship queries), and a **hybrid approach** that combines both vector and graph databases to leverage the strengths of each paradigm. This makes it an excellent reference for understanding when and how to use each approach in real-world applications.
 
-## 📋 Overview
+## 📋 Overview 
 
 This project demonstrates an advanced **GraphRAG architecture** that leverages two complementary approaches for intelligent question-answering:
 
